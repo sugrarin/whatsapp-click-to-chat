@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --text-secondary: #666;
+    --input-border: #e0e0e0;
+    --input-border-focus: #25D366;
+    --button-color: #666;
+    --button-hover: #333;
+    --whatsapp-color: #25D366;
+    --whatsapp-hover: #128C7E;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1a1a;
+        --text-color: #fff;
+        --text-secondary: #aaa;
+        --input-border: #333;
+        --input-border-focus: #25D366;
+        --button-color: #aaa;
+        --button-hover: #fff;
+        --whatsapp-color: #25D366;
+        --whatsapp-hover: #128C7E;
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#phoneInput {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+#phoneInput::placeholder {
+    color: var(--text-secondary);
+}
+
+#phoneInput:focus {
+    border-color: var(--input-border-focus);
+}
+
+.clear-button {
+    position: absolute;
+    right: 15px;
+    top: 46%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--button-color);
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.clear-button:hover {
+    color: var(--button-hover);
+}
+
+.hidden {
+    display: none;
+}
+
+.link-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#whatsappLink {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: var(--whatsapp-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    gap: 4px;
+}
+
+#whatsappLink:hover {
+    background-color: var(--whatsapp-hover);
+}
+
+.link-text {
+    font-size: 16px;
+}
+
+.link-url {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.footer-content {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.github-link {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.github-link:hover {
+    color: var(--text-color);
+} 
