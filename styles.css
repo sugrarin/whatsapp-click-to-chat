@@ -47,6 +47,13 @@ body {
     padding: 20px;
 }
 
+img {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto 24px;
+}
+
 .input-wrapper {
     position: relative;
     width: 100%;
@@ -83,6 +90,7 @@ body {
     color: var(--button-color);
     cursor: pointer;
     padding: 0 5px;
+    background-color: var(--background-color);
 }
 
 .clear-button:hover {
@@ -110,6 +118,8 @@ body {
     font-weight: 500;
     transition: background-color 0.3s ease;
     gap: 4px;
+    min-width: 360px;
+    max-width: 360px;
 }
 
 #whatsappLink:hover {
@@ -123,6 +133,31 @@ body {
 .link-url {
     font-size: 14px;
     opacity: 0.9;
+    max-width: 360px;
+    overflow: hidden;
+}
+
+.questions {
+    margin: 32px 20px;
+    max-width: 360px;
+}
+
+.questions-item {
+    margin-bottom: 20px;
+}
+
+.question {
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.answer {
+    color: var(--text-color);
+    font-size: 17px;
+    line-height: 1.4;
+    opacity: 0.7;
 }
 
 .footer {
@@ -144,6 +179,10 @@ body {
     font-size: 14px;
 }
 
+.footer-content a {
+    color: inherit;
+}
+
 .github-link {
     color: var(--text-secondary);
     transition: color 0.3s ease;
@@ -153,4 +192,4 @@ body {
 
 .github-link:hover {
     color: var(--text-color);
-} 
+}
