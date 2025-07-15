@@ -1,12 +1,12 @@
 const translations = {
     en: {
-        title: 'Click to Chat - Start WhatsApp Chat Without Saving Contact',
-        placeholder: 'Paste phone number',
+        title: 'Click to Chat • Start WhatsApp Chat Without Saving Contact',
+        placeholder: 'Paste phone number or message',
         buttonText: 'Message on WhatsApp'
     },
     ru: {
-        title: 'Click to Chat - Начать чат в WhatsApp без сохранения контакта',
-        placeholder: 'Вставьте номер',
+        title: 'Начните чат в WhatsApp без сохранения контакта',
+        placeholder: 'Вставьте номер или сообщение',
         buttonText: 'Открыть в WhatsApp'
     }
 };

@@ -15,12 +15,17 @@
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#25D366">
 </head>
 
 <body>
-    <div class="container">
 
-        <img class="logo" width="80" height="80" src="/WhatsApp.png" alt="">
+    <div class="container">
+        <header>
+            <img class="logo" width="60" height="60" src="/WhatsApp.png" alt="">
+            <p class="header-text">Start a WhatsApp chat with anyone without saving their phone number.</p>
+        </header>
 
         <div class="input-wrapper">
             <input type="text" id="phoneInput" placeholder="Paste phone number" autocomplete="off" autofocus>
@@ -55,6 +60,13 @@
     </footer>
     <script src="lang.js"></script>
     <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,22 @@
+{
+  "name": "Click to Chat for WhatsApp",
+  "short_name": "WA Click",
+  "description": "Start a WhatsApp chat without saving the contact.",
+  "icons": [
+    {
+      "src": "WhatsApp.png",
+      "sizes": "80x80",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48 64x64 128x128 256x256",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#25D366",
+  "orientation": "portrait"
+}

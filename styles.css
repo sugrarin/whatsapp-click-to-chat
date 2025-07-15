@@ -47,11 +47,21 @@ body {
     padding: 20px;
 }
 
+header {
+    margin: 24px 0;
+}
+
+.header-text {
+    font-size: 16px;
+    line-height: 135%;
+
+}
+
 img {
-    width: 80px;
+    width: 60px;
     height: auto;
     display: block;
-    margin: 0 auto 24px;
+    margin: 0 0 8px;
 }
 
 .input-wrapper {
@@ -62,7 +72,7 @@ img {
 #phoneInput {
     width: 100%;
     padding: 15px;
-    font-size: 18px;
+    font-size: 16px;
     border: 2px solid var(--input-border);
     border-radius: 8px;
     outline: none;
@@ -138,7 +148,7 @@ img {
 }
 
 .questions {
-    margin: 32px 20px;
+    margin: 32px 20px 60px;
     max-width: 360px;
 }
 
@@ -149,22 +159,18 @@ img {
 .question {
     font-weight: bold;
     color: var(--text-color);
-    font-size: 18px;
-    margin-bottom: 6px;
+    font-size: 16px;
+    margin-bottom: 4px;
 }
 
 .answer {
     color: var(--text-color);
-    font-size: 17px;
-    line-height: 1.4;
+    font-size: 16px;
+    line-height: 130%;
     opacity: 0.7;
 }
 
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     padding: 20px;
 }
 
@@ -181,15 +187,4 @@ img {
 
 .footer-content a {
     color: inherit;
-}
-
-.github-link {
-    color: var(--text-secondary);
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.github-link:hover {
-    color: var(--text-color);
 }
