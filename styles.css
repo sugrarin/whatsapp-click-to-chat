@@ -54,7 +54,6 @@ header {
 .header-text {
     font-size: 16px;
     line-height: 135%;
-
 }
 
 img {
@@ -128,8 +127,7 @@ img {
     font-weight: 500;
     transition: background-color 0.3s ease;
     gap: 4px;
-    min-width: 360px;
-    max-width: 360px;
+    width: 100%;
 }
 
 #whatsappLink:hover {
@@ -172,6 +170,7 @@ img {
 
 .footer {
     padding: 20px;
+    margin-top: auto;
 }
 
 .footer-content {
