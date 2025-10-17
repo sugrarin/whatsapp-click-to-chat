@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const phoneInput = document.getElementById('phoneInput');
+    const textInput = document.getElementById('textInput');
     const clearButton = document.getElementById('clearButton');
-    const pasteButton = document.getElementById('pasteButton');
     const linkContainer = document.getElementById('linkContainer');
     const whatsappLink = document.getElementById('whatsappLink');
     const linkUrl = whatsappLink.querySelector('.link-url');
+    const helpButton = document.getElementById('helpButton');
+    const questionsSection = document.querySelector('.questions');
+    const closeButton = document.querySelector('.close-button');
 
     // Функция для извлечения номера телефона из текста
     const cleanPhoneNumber = (text) => {
@@ -45,13 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Восстанавливаем последний введенный номер при загрузке
     const savedPhone = localStorage.getItem('last_phone_number');
     if (savedPhone) {
-        phoneInput.value = savedPhone;
+        textInput.value = savedPhone;
         updateWhatsAppLink(savedPhone);
         clearButton.classList.remove('hidden');
     }
 
     // Обработчик ввода
-    phoneInput.addEventListener('input', (e) => {
+    textInput.addEventListener('input', (e) => {
         const value = e.target.value;
 
         if (value) {
@@ -64,9 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Обработчик вставки
-    phoneInput.addEventListener('paste', (e) => {
+    textInput.addEventListener('paste', (e) => {
         setTimeout(() => {
-            const value = phoneInput.value;
+            const value = textInput.value;
             if (value) {
                 clearButton.classList.remove('hidden');
             }
@@ -76,26 +78,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Обработчик клика по кнопке очистки
     clearButton.addEventListener('click', () => {
-        phoneInput.value = '';
+        textInput.value = '';
         clearButton.classList.add('hidden');
         linkContainer.classList.add('hidden');
         localStorage.removeItem('last_phone_number');
-        phoneInput.focus();
+        textInput.focus();
     });
 
-    // Обработчик клика по кнопке вставки из буфера обмена
-    pasteButton.addEventListener('click', async () => {
-        try {
-            const text = await navigator.clipboard.readText();
-            if (text) {
-                phoneInput.value = text;
-                clearButton.classList.remove('hidden');
-                updateWhatsAppLink(text);
-                phoneInput.focus();
+    // Обработчик клика по кнопке помощи
+    if (helpButton) {
+        helpButton.addEventListener('click', () => {
+            questionsSection.classList.remove('hidden');
+        });
+    }
+
+    // Обработчик клика по кнопке закрытия
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            questionsSection.classList.add('hidden');
+        });
+    }
+
+    // Закрытие при клике на фон (вне контента)
+    if (questionsSection) {
+        questionsSection.addEventListener('click', (e) => {
+            if (e.target === questionsSection) {
+                questionsSection.classList.add('hidden');
             }
-        } catch (err) {
-            // Если доступ к буферу обмена запрещен, просто фокусируемся на поле ввода
-            phoneInput.focus();
-        }
-    });
+        });
+    }
 });

@@ -20,6 +20,10 @@
 </head>
 
 <body>
+    <div class="language-switcher">
+        <button id="langEn" class="lang-button active">EN</button>
+        <button id="langRu" class="lang-button">RU</button>
+    </div>
 
     <div class="container">
         <header>
@@ -28,9 +32,8 @@
         </header>
 
         <div class="input-wrapper">
-            <input type="text" id="phoneInput" placeholder="Paste phone number" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
+            <input type="text" id="textInput" autocorrect="off" inputmode="numeric" autocomplete="off" autofocus>
             <button id="clearButton" class="clear-button hidden">×</button>
-            <button id="pasteButton" class="paste-button" title="Paste from clipboard">📋</button>
         </div>
         <div id="linkContainer" class="link-container hidden">
             <a href="#" id="whatsappLink" target="_blank">
@@ -40,25 +43,27 @@
         </div>
     </div>
 
-    <div class="questions">
-        <div class="questions-item">
-            <h2 class="question">How it works</h2>
-            <p class="answer">Paste a message containing a WhatsApp number. Click on the generated link to go to the
-                chat.</p>
-        </div>
+    <button id="helpButton" class="help-button">?</button>
 
-        <div class="questions-item">
-            <h2 class="question">Is the number transmitted anywhere?</h2>
-            <p class="answer">No, the script simply removes all unnecessary characters that are not part of the number.
-            </p>
+    <div class="questions hidden">
+        <div class="questions-content">
+            <button class="close-button">×</button>
+            <div class="questions-item">
+                <h2 class="question">How it works</h2>
+                <p class="answer">Paste a message containing a WhatsApp number. Click on the generated link to go to the chat.</p>
+            </div>
+
+            <div class="questions-item">
+                <h2 class="question">Is the number transmitted anywhere?</h2>
+                <p class="answer">No, the script simply removes all unnecessary characters that are not part of the number.</p>
+            </div>
+
+            <div class="questions-item">
+                <h2 class="question">У меня есть проблема или идея</h2>
+                <p class="answer">Вы можете найти контакты на моём сайте <a href="https://tima.ee/" target="_blank">tima.ee</a>, а код <a href="https://github.com/sugrarin/whatsapp-click-to-chat" target="_blank">на гитхабе</a>. Сайт сделал Тимур Суграрин в 2025 году.</p>
+            </div>
         </div>
     </div>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <span><a href="https://tima.ee/">Timur Sugrarin</a>, 2025</span>
-        </div>
-    </footer>
     <script src="lang.js"></script>
     <script src="script.js"></script>
     <script>
