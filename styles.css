@@ -106,6 +106,24 @@ img {
     color: var(--button-hover);
 }
 
+.paste-button {
+    position: absolute;
+    right: 45px;
+    top: 46%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--button-color);
+    cursor: pointer;
+    padding: 0 5px;
+    background-color: var(--background-color);
+}
+
+.paste-button:hover {
+    color: var(--button-hover);
+}
+
 .hidden {
     display: none;
 }

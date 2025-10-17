@@ -28,8 +28,9 @@
         </header>
 
         <div class="input-wrapper">
-            <input type="text" id="phoneInput" placeholder="Paste phone number" autocomplete="off" autofocus>
+            <input type="text" id="phoneInput" placeholder="Paste phone number" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
             <button id="clearButton" class="clear-button hidden">×</button>
+            <button id="pasteButton" class="paste-button" title="Paste from clipboard">📋</button>
         </div>
         <div id="linkContainer" class="link-container hidden">
             <a href="#" id="whatsappLink" target="_blank">

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const phoneInput = document.getElementById('phoneInput');
     const clearButton = document.getElementById('clearButton');
+    const pasteButton = document.getElementById('pasteButton');
     const linkContainer = document.getElementById('linkContainer');
     const whatsappLink = document.getElementById('whatsappLink');
     const linkUrl = whatsappLink.querySelector('.link-url');
@@ -80,5 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
         linkContainer.classList.add('hidden');
         localStorage.removeItem('last_phone_number');
         phoneInput.focus();
+    });
+
+    // Обработчик клика по кнопке вставки из буфера обмена
+    pasteButton.addEventListener('click', async () => {
+        try {
+            const text = await navigator.clipboard.readText();
+            if (text) {
+                phoneInput.value = text;
+                clearButton.classList.remove('hidden');
+                updateWhatsAppLink(text);
+                phoneInput.focus();
+            }
+        } catch (err) {
+            // Если доступ к буферу обмена запрещен, просто фокусируемся на поле ввода
+            phoneInput.focus();
+        }
     });
 });
